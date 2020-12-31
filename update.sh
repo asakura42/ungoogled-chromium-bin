@@ -9,3 +9,4 @@ pkgrel="$(grep -o "\-[[:digit:]]*\-" <<< "$version" | sed 's/-//g')"
 sed -i "s/^pkgver=.*/pkgver=$pkgver/" PKGBUILD
 sed -i "s/^pkgrel=.*/pkgrel=$pkgrel/" PKGBUILD
 sed -i "s/^sha256sums=.*/sha256sums=(\"$shasum\")/" PKGBUILD
+git commit . -m "bump version: $pkgver"
