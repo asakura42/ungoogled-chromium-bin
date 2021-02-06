@@ -25,7 +25,7 @@ optdepends=('pepper-flash: support for Flash content'
             'libva-vdpau-driver: for hardware video acceleration with NVIDIA GPUs')
 
 source=("https://download.opensuse.org/repositories/home:/justkidding:/arch/standard/x86_64/ungoogled-chromium-$pkgver-$pkgrel-x86_64.pkg.tar.zst")
-sha256sums=("d9e67aa82bbfadcd8b96de3992c5c858074b073a33501d6a39bb5cb174371685")
+sha256sums=("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
 
 package() {
   cp -R "${srcdir}/usr/" "${pkgdir}/usr"
