@@ -1,7 +1,7 @@
 #!/bin/bash
 temp=$(mktemp)
 version=$(curl -sL "https://download.opensuse.org/repositories/home:/justkidding:/arch/standard/x86_64/" | sed 's/<[^>]*>//g'| grep -o "ungoogled-chromium-[[:digit:]].*-x86_64.pkg.tar.zst" | sort -u | head -n1)
-download=$(curl -sL "https://download.opensuse.org/repositories/home:/justkidding:/arch/standard/x86_64/$version.mirrorlist" | grep -m1 "http.*$version" | sed 's/^.*="/https:\/\/download.opensuse.org/;s/".*$//')
+download=$(curl -sL "https://download.opensuse.org/repositories/home:/justkidding:/arch/standard/x86_64/$version.mirrorlist" | grep -m1 "$version" | sed 's/^.*="/https:\/\/download.opensuse.org/;s/".*$//')
 curl -L "$download" -o "$temp"
 shasum=$(sha256sum "$temp" | cut -d' ' -f1)
 pkgver="$(egrep -o "([0-9]{1,}\.)+[0-9]{1,}" <<< "$version")"
