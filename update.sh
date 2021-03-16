@@ -1,7 +1,7 @@
 #!/bin/bash
 temp=$(mktemp -d)
-links=$(curl -s "https://repo.vin.ovh/arch/x86_64/" | grep ungoogled | grep -o "ungoogled.*zst" | sort -u | sed 's|^|https://repo.vin.ovh/arch/x86_64/|')
 zst=$(curl -s "https://repo.vin.ovh/arch/x86_64/" | grep ungoogled | grep -o "ungoogled.*zst" | sort -u)
+links=$(echo "$zst" | sed 's|^|https://repo.vin.ovh/arch/x86_64/|')
 curl -L -O --output-dir "$temp" "$links.sig"
 curl -L -O --output-dir "$temp" "$links"
 gpg --recv-keys 3DEA62513C8035383A245A12E5786B42E8E5D565
