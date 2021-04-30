@@ -3,8 +3,8 @@
 # Contributors: WSDMatty, Crotok, SantoZ, Det, Achilleas Pipinellis, speed145a, Schnouki
 
 pkgname=ungoogled-chromium-bin
-pkgver=89.0.4389.90
-pkgrel=3
+pkgver=89.0.4389.128
+pkgrel=1
 pkgdesc="A lightweight approach to removing Google web service dependency (binary version)"
 arch=("x86_64")
 url="https://ungoogled-software.github.io/"
@@ -25,7 +25,7 @@ optdepends=('pepper-flash: support for Flash content'
             'libva-vdpau-driver: for hardware video acceleration with NVIDIA GPUs')
 
 source=("https://repo.vin.ovh/arch/x86_64/ungoogled-chromium-$pkgver-$pkgrel-x86_64.pkg.tar.zst")
-sha256sums=("e50659bea7b3018278c39be6ddd6a662c99db751a0068ca1ff97cdcdd25cda77")
+sha256sums=("2364fe166e5c8f3ef6b412b2e3c40d2540c2eb23376e300ddb42650945d19549")
 
 package() {
   cp -R "${srcdir}/usr/" "${pkgdir}/usr"
